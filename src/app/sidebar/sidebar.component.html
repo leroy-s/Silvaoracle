@@ -1,0 +1,75 @@
+<div class="card flex justify-content-center">
+    <p-sidebar #sidebarRef [(visible)]="sidebarVisible">
+        <ng-template pTemplate="headless">
+            <div class="flex flex-column h-full">
+                <div class="flex align-items-center justify-content-between px-4 pt-3 flex-shrink-0">
+                    <span class="inline-flex align-items-center gap-2">
+                        <i style="font-size: 2rem; color: rgb(17, 95, 240);"></i>
+                        <span class=" text-2xl text-primary ">clinica good hope </span>
+                    </span>
+                    <span>
+                        <p-button type="button" (onClick)="closeCallback($event)" icon="pi pi-times" rounded="true" outlined="true" styleClass="h-2rem w-2rem"></p-button>
+                    </span>
+                </div>
+                <div class="overflow-y-auto">
+                    <ul class="list-none p-3 m-0">
+                        <li>
+                            <div
+                                pRipple
+                                pStyleClass="@next"
+                                enterClass="hidden"
+                                enterActiveClass="slidedown"
+                                leaveToClass="hidden"
+                                leaveActiveClass="slideup"
+                                class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple"
+                            >
+                                <span class="font-medium">Tablas</span>
+                                <i class="pi pi-chevron-down"></i>
+                            </div>
+                            <ul class="list-none p-0 m-0 overflow-hidden">
+                                <li>
+                                    <a [routerLink] = "['']" pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple no-underline">
+                                        <i class="pi pi-home mr-2"></i>
+                                        <span class="font-medium">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  [routerLink] = "['/doctor']" pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple no-underline">
+                                        <i class="pi pi-bookmark mr-2"></i>
+                                        <span class="font-medium">Doctor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink] = "['/especialidad']" pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple no-underline">
+                                        <i class="pi pi-bookmark mr-2"></i>
+                                        <span class="font-medium">Especialidad</span>
+                                    </a>
+                                </li>
+
+                               
+                                
+                                <li>
+                                    <a pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                                        <i class="pi pi-cog mr-2"></i>
+                                        <span class="font-medium">Settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                   
+                </div>
+                <div class="mt-auto">
+                    <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
+                    <a pRipple class="m-3 flex align-items-center cursor-pointer p-3 gap-2 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                        <p-avatar image="icons/image.png" shape="circle"></p-avatar>
+
+                        <span class="font-bold">Angel Leroy Silva Pusma</span>
+                    </a>
+                </div>
+            </div>
+        </ng-template>
+    </p-sidebar>
+    <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
+    </div>
